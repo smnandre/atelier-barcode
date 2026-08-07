@@ -1,0 +1,88 @@
+{
+    "name": "atelier/barcode",
+    "description": "PHP library that builds QR codes, matrix codes, and barcodes as SVG, PNG, or GIF",
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/ateliersvg/barcode",
+    "keywords": [
+        "qrcode",
+        "qr-code",
+        "barcode",
+        "codabar",
+        "code-39",
+        "code-93",
+        "code-128",
+        "datamatrix",
+        "data-matrix",
+        "ean-8",
+        "ean-13",
+        "upc-a",
+        "upc-e",
+        "itf",
+        "itf-14",
+        "interleaved-2-of-5",
+        "gs1",
+        "gs1-128",
+        "gs1-datamatrix",
+        "isbn",
+        "svg",
+        "matrix-code",
+        "vector-graphics"
+    ],
+    "support": {
+        "issues": "https://github.com/ateliersvg/barcode/issues",
+        "source": "https://github.com/ateliersvg/barcode"
+    },
+    "authors": [
+        {
+            "name": "Simon André",
+            "email": "smn.andre@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.3"
+    },
+    "suggest": {
+        "ext-gd": "Enables PNG rendering via PngRenderer"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.94",
+        "phpstan/phpstan": "^2.1",
+        "phpunit/phpunit": "^12.5",
+        "rector/rector": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Atelier\\Barcode\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Atelier\\Barcode\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "0.7.x-dev"
+        }
+    },
+    "scripts": {
+        "coverage": "vendor/bin/phpunit --coverage-text",
+        "cs": "vendor/bin/php-cs-fixer fix --dry-run --diff",
+        "cs:fix": "vendor/bin/php-cs-fixer fix",
+        "qa": [
+            "@cs",
+            "@sa",
+            "@test"
+        ],
+        "docs:examples": "@php docs/generate-examples.php",
+        "rector": "vendor/bin/rector process --dry-run",
+        "sa": "vendor/bin/phpstan analyse --memory-limit=-1",
+        "showcase": "@php examples/showcase.php",
+        "test": "vendor/bin/phpunit"
+    }
+}
