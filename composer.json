@@ -79,7 +79,6 @@
             "@sa",
             "@test"
         ],
-        "docs:examples": "@php docs/generate-examples.php",
         "rector": "vendor/bin/rector process --dry-run",
         "sa": "vendor/bin/phpstan analyse --memory-limit=-1",
         "showcase": "@php examples/showcase.php",
